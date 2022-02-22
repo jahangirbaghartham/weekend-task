@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href=".//css/main.css">
+</head> 
+<body>
+
+    <div class="goods">
+      <div class="goods goods1" color="blue">1</div>
+      <div class="goods goods2">2</div>
+      <div class="goods goods3">3</div>
+      <div class="goods goods4">4</div>
+      <div class="goods goods5">5</div>
+      <div class="goods goods6">6</div>
+      <div class="goods goods7">7</div>
+      <div class="goods goods8">8</div>
+      <div class="goods goods9">9</div>
+      <div class="goods goods10">10</div>
+      <div class="goods goods11">11</div>
+      <div class="goods goods12">12</div>
+      <div class="goods goods13">13</div>
+      <div class="goods goods14">14</div>
+      <div class="goods goods15">15</div>
+      <div class="goods goods16">16</div>
+      <div class="goods goods17">17</div>
+      <div class="goods goods18">18</div>
+      <div class="goods goods19">19</div>
+      <div class="goods goods20">20</div>
+      <div class="goods goods21">21</div>
+      <div class="goods goods23">23</div>
+      <div class="goods goods12">24</div>
+      <div class="goods goods25">25</div>
+      <div class="goods goods26">26</div>     
+      <div class="goods goods27">37</div>
+      <div class="goods goods28">28</div>
+      <div class="goods goods29">29</div>
+      <div class="goods goods30">30</div>
+        
+    </div>
+
+    <script>
+        const slider = document.querySelector('.goods');
+        let isdown = false;
+        let startx;
+        let scrollleft;
+
+        slider.addEventListener('mousedown',(e) => {
+          isDown = true;
+          slider.classList.add('active');
+          startX = e.pagex - slider.offsetLeft;
+          scrollLeft = slider.scrollLeft;
+        });
+
+         slider.addEventlistener('mouseleave',() => {
+          isdown = false;
+          slider.classList.remove('active');
+        });
+
+         slider.addEventlistener('mouseup',() => {
+          isdown = false;
+          slider.classList.remove('active');
+        });
+
+         slider.addEventlistener('mousemove',(e) => {
+           if (!isDown) return;
+           e.preventDefault();
+           const x = e.pagex - slider.offsetleft;
+        const walk = (x - startx) * 3;
+        slider.scrollLeft = scrollLeft - walk;
+        });
+
+    </script>
+</body>
+</html>
